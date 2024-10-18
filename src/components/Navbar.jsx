@@ -7,9 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const menuItems = [
   { name: "Home", link: "/" },
-  { name: "Products", link: "/products" },
-  { name: "About", link: "/about" },
-  { name: "Contact", link: "/contact" },
+  { name: "Mattress", link: "/products" },
+  { name: "Pillow", link: "/about" },
+  { name: "Accessories", link: "/contact" },
+  { name: "About us", link: "/contact" },
 ];
 
 const MotionLink = motion(Link);

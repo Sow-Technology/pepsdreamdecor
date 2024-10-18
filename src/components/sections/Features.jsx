@@ -1,75 +1,71 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Truck, HeadphonesIcon, LockIcon } from "lucide-react";
-
-const features = [
-  {
-    icon: <Truck className="w-10 h-10" />,
-    title: "Free Shipping Across India",
-    description: "On all orders",
-  },
-  {
-    icon: <HeadphonesIcon className="w-10 h-10" />,
-    title: "Support",
-    description: "Monday - Saturday\n9.00 am to 6.00 pm",
-  },
-  {
-    icon: <LockIcon className="w-10 h-10" />,
-    title: "100% Secure Checkout",
-    description: "Visa / Master Card",
-  },
-];
-
-const FeatureCard = ({ icon, title, description, index }) => {
-  return (
-    <motion.div
-      className="relative overflow-hidden rounded-2xl"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-r  opacity-30" />
-      <div className="relative bg-white/40 bg-opacity-10 backdrop-filter backdrop-blur-lg p-8 h-full flex flex-col items-center text-center">
-        <motion.div
-          className="text-[#FFA45B] mb-6"
-          whileHover={{ scale: 1.1, rotate: 360 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ duration: 0.3 }}
-        >
-          {icon}
-        </motion.div>
-        <h3 className="text-2xl font-bold mb-4 text-[#FFA45B]">{title}</h3>
-        <p className="text-gray-800 whitespace-pre-line">{description}</p>
-      </div>
-    </motion.div>
-  );
-};
+import {
+  FaBed,
+  FaAlignCenter,
+  FaSnowflake,
+  FaExpandArrowsAlt,
+  FaThumbsUp,
+  FaCompressArrowsAlt,
+  FaCalendarCheck,
+} from "react-icons/fa";
 
 export default function Features() {
+  const features = [
+    { icon: <FaBed />, text: "Zero Disturbance" },
+    { icon: <FaAlignCenter />, text: "Marvelous Middle" },
+    { icon: <FaSnowflake />, text: "Cooler Fabric" },
+    { icon: <FaExpandArrowsAlt />, text: "Super Edge Plus" },
+    { icon: <FaThumbsUp />, text: "Great First Feel" },
+    { icon: <FaCompressArrowsAlt />, text: "Pocketed Inner Spring" },
+    { icon: <FaCalendarCheck />, text: "Up to 10 Years Warranty" },
+  ];
+
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[#FBF6F0]" />
-      <div className="absolute inset-0">
-        {/* <div className="absolute top-0 left-0 w-96 h-96 bg-[#FFA45B] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" /> */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFDA77] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
-        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-[#AEE6E6] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000" />
+    <div className="relative bg-[#FBF6F0] py-20">
+      <motion.h2
+        className="text-3xl font-bold text-center text-[#FFA45B] mb-12"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Our Features
+      </motion.h2>
+      <div className="flex flex-wrap justify-center items-center gap-4 px-4">
+        {features.map((feature, index) => (
+          <React.Fragment key={index}>
+            <motion.div
+              className="text-center flex flex-col items-center w-32 sm:w-40"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.div
+                className="text-3xl sm:text-4xl mb-3 text-[#FFA45B]"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.5 }}
+              >
+                {feature.icon}
+              </motion.div>
+              <p className="text-xs sm:text-sm font-semibold text-gray-700">
+                {feature.text}
+              </p>
+            </motion.div>
+            {index < features.length - 1 && (
+              <motion.div
+                className="h-16 w-px bg-[#FFA45B] opacity-30 hidden sm:block"
+                initial={{ height: 0 }}
+                animate={{ height: "4rem" }}
+                transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+              />
+            )}
+          </React.Fragment>
+        ))}
       </div>
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#FFA45B]"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Why Choose Us
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {features.map((feature, index) => (
-            <FeatureCard key={index} {...feature} index={index} />
-          ))}
-        </div>
-      </div>
-    </section>
+      {/* Background gradient effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FBF6F0] to-[#FFA45B] opacity-10" />
+    </div>
   );
 }

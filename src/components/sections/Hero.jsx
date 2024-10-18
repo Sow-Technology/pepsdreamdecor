@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "../Navbar";
 import { motion } from "framer-motion";
 import { BoxReveal } from "../ui/box-reveal";
+import { ShoppingCart } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -11,22 +12,23 @@ export default function Hero() {
       <div className="container mx-auto px-4 flex flex-col items-center  h-full">
         <BoxReveal boxColor={"#FFA45B"}>
           <motion.h1
-            className="text-4xl font-medium md:text-6xl  mb-4 text-[#FFA45B]"
+            className="text-4xl font-medium md:text-5xl  mb-4 text-[#FFA45B]"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Transform Your Space
+            Experience Sleep Like Never Before
           </motion.h1>
         </BoxReveal>
         <BoxReveal boxColor={"#FFA45B"}>
           <motion.p
-            className="text-lg md:text-2xl text-gray-700 mb-8 max-w-2xl"
+            className="text-base md:text-lg text-gray-700 mb-8 max-w-2xl"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Discover Elegant and Affordable Home Decor
+            Experience the best of Peps Mattresses at PeacefulPillow. Discover
+            the ultimate in sleep comfort and support.{" "}
           </motion.p>
         </BoxReveal>
         <BoxReveal boxColor={"#FFA45B"}>
@@ -38,7 +40,7 @@ export default function Hero() {
             <button className="relative inline-flex h-14 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-[#FFA45B] focus:ring-offset-2 focus:ring-offset-[#FBF6F0]">
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFA45B_0%,#FFDA77_50%,#FFA45B_100%)]" />
               <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#FBF6F0] px-6 py-1 text-lg font-medium text-[#FFA45B] backdrop-blur-3xl">
-                Start Your Makeover Today!
+                <ShoppingCart className="h-4 w-4 mr-2" /> Shop Now{" "}
               </span>
             </button>
           </motion.div>
