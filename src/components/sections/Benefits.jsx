@@ -20,7 +20,7 @@ export default function Benefits() {
   ];
 
   return (
-    <div className="bg-[#FBF6F0] py-12 md:py-20 px-4 md:px-8">
+    <div className="bg-[#FBF6F0] py-12 md:py-20 px-4 md:px-8 relative">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="flex flex-col md:flex-row justify-around items-center space-y-8 md:space-y-0"
@@ -50,6 +50,12 @@ export default function Benefits() {
           ))}
         </motion.div>
       </div>
+      <motion.div
+        className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-[#FBF6F0] to-transparent"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.8 }}
+      />
     </div>
   );
 }

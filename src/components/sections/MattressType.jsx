@@ -6,32 +6,32 @@ import Image from "next/image";
 // Dummy image URLs (replace with actual images)
 const mattressTypes = [
   {
-    image: "https://via.placeholder.com/300x200",
+    image: "/m1.png",
     title: "Pocketed Spring",
     subtitle: "Soft & Comfortable Mattress",
   },
   {
-    image: "https://via.placeholder.com/300x200",
+    image: "/m2.png",
     title: "Natural Latex",
     subtitle: "Chemical Free Sleep",
   },
   {
-    image: "https://via.placeholder.com/300x200",
+    image: "/m3.jpeg",
     title: "Memory Foam",
     subtitle: "Space Tech Sleep System",
   },
   {
-    image: "https://via.placeholder.com/300x200",
+    image: "/m4.jpeg",
     title: "Rubberized Coir",
     subtitle: "Breathable Mattress",
   },
   {
-    image: "https://via.placeholder.com/300x200",
+    image: "/m5.jpeg",
     title: "Bonnell Spring",
     subtitle: "Back Support Spring Mattress",
   },
   {
-    image: "https://via.placeholder.com/300x200",
+    image: "/m6.png",
     title: "Grid System",
     subtitle: "Premium Breathable Grid",
   },
@@ -59,12 +59,13 @@ export default function MattressTypes() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="relative h-48 w-full">
+              <div className="relative  w-full aspect-square">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  layout="fill"
-                  objectFit="cover"
+                  className="aspect-square object-cover h-auto"
+                  width={500}
+                  height={500}
                 />
               </div>
               <div className="p-4">

@@ -94,15 +94,14 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
           >
             <h2 className="text-2xl font-semibold mb-6 text-center">Find Us</h2>
-            <div className="aspect-w-16 aspect-h-9">
+            <div className="aspect-w-16 aspect-h-9 flex items-center justify-center">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2176767606308!2d-73.98823492342224!3d40.748440671388325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1708977881307!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.685405712938!2d77.6587946!3d12.9919622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae11861bd7e0df%3A0x21d7776f976eae73!2sPEPS%20Mattress%20-%20Experience%20Centre%20(GSS)%20-%20Old%20Madras%20Road!5e0!3m2!1sen!2sin!4v1729270835300!5m2!1sen!2sin"
                 width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen=""
+                height="600"
+                allowfullscreen=""
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </motion.div>

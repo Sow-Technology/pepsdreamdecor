@@ -10,6 +10,7 @@ import FeaturedProducts from "@/components/sections/FeaturedProducts";
 import Benefits from "@/components/sections/Benefits";
 import MattressTypes from "@/components/sections/MattressType";
 import Footer from "@/components/Footer";
+import Featured from "@/components/sections/Featured";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Benefits />
+      <Featured />
       <FeaturedProducts />
       <BestSellers />
       <MattressTypes />

@@ -46,7 +46,7 @@ const Footer = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="invert my-2"
+              className=" my-2"
             >
               <Logo />
             </motion.div>

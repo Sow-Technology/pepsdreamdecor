@@ -1,16 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Logo() {
   return (
-    <div>
+    <Link href="/">
       <Image
         src="/logo.png"
         alt=""
         width={150}
         height={60}
-        className=" mix-blend-difference"
+        className=" invert"
       />
-    </div>
+    </Link>
   );
 }
