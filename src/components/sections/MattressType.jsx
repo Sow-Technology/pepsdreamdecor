@@ -30,11 +30,11 @@ const mattressTypes = [
     title: "Bonnell Spring",
     subtitle: "Back Support Spring Mattress",
   },
-  {
-    image: "/m6.png",
-    title: "Grid System",
-    subtitle: "Premium Breathable Grid",
-  },
+  // {
+  //   image: "/m6.png",
+  //   title: "Grid System",
+  //   subtitle: "Premium Breathable Grid",
+  // },
 ];
 
 export default function MattressTypes() {

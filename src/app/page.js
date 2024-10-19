@@ -18,7 +18,9 @@ export default function Home() {
       <Hero />
       <Features />
       <Benefits />
-      <Featured />
+      <div className="bg-white">
+        <Featured />
+      </div>
       <FeaturedProducts />
       <BestSellers />
       <MattressTypes />

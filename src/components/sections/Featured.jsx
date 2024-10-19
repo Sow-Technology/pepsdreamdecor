@@ -31,6 +31,7 @@ const ProductSection = ({
   imageAlt,
   reverse,
   ml = true,
+  crop = false,
 }) => (
   <motion.div
     className={`flex flex-col ${
@@ -63,7 +64,9 @@ const ProductSection = ({
         alt={imageAlt}
         width={1200}
         height={1300}
-        className={` w-auto ${ml ? "ml-60" : "-ml-20"}  h-auto rounded-lg `}
+        className={` w-auto  ${
+          ml ? "lg:ml-60" : "lg:-ml-20"
+        }  h-auto rounded-lg ${!crop && "max-w-[70%]"} `}
       />
     </motion.div>
   </motion.div>
@@ -71,7 +74,7 @@ const ProductSection = ({
 
 export default function Featured() {
   return (
-    <div className=" mx-auto pl-20 py-8 bg-[#ffffff] relative">
+    <div className="max-w-7xl mx-auto pl-20 py-8 bg-[#ffffff] relative">
       <motion.div
         className="flex justify-center space-x-8 mb-12"
         initial={{ opacity: 0, y: -20 }}
@@ -108,6 +111,7 @@ export default function Featured() {
           ]}
           imageSrc="/mattress.png"
           imageAlt="Mattress"
+          crop={true}
         />
 
         <ProductSection
