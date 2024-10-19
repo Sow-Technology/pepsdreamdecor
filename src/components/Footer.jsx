@@ -36,10 +36,11 @@ const Footer = () => {
     <footer className="bg-[#FBF6F0] text-gray-700 py-12 px-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[#FFA45B]/10 to-[#FFDA77]/10" />
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            className="col-span-2"
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <motion.div
@@ -55,8 +56,8 @@ const Footer = () => {
                 <FaPhone className="mr-2 text-[#FFA45B]" />
                 078991 14456
               </p>
-              <p className="flex items-start">
-                <FaMapMarkerAlt className="mr-2 mt-1 text-[#FFA45B] min-h-4 min-w-4" />
+              <p className="flex items-start text-sm">
+                <FaMapMarkerAlt className="mr-2 mt-1 text-[#FFA45B] min-h-4 min-w-4 " />
                 <span>
                   Ground floor, #23, Trinity Enclave, Old Madras Rd, near Shell
                   Petrol Station Rajana Colony, beside Shell petrol station,

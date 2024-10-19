@@ -9,10 +9,10 @@ export default function Hero() {
   return (
     <section className="bg-[#FBF6F0] pb-16 flex flex-col gap-10 text-center bg-[url('/bg2.jpg')] h-screen bg-cover bg-center relative overflow-hidden">
       <Navbar />
-      <div className="container mx-auto px-4 flex flex-col items-center  h-full">
+      <div className="container mx-auto px-4 flex flex-col items-center  h-full z-10">
         <BoxReveal boxColor={"#FFA45B"}>
           <motion.h1
-            className="text-4xl font-medium md:text-5xl  mb-4 text-[#FFA45B]"
+            className="text-4xl font-medium md:text-5xl  mb-4 text-[#FFA45B] z-10"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

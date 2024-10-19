@@ -5,113 +5,60 @@ import { AnimatePresence, motion } from "framer-motion";
 const products = [
   {
     id: 1,
-    name: "Elegant Vase",
+    name: "Tartania",
     href: "#",
-    imageSrc: "/p1.jpg",
+    imageSrc: "/p2.jpg",
     imageAlt: "Elegant white vase with minimalist design.",
-    price: "$29.99",
-    color: "White",
+    price: "Starting from ₹10,822",
   },
   {
     id: 2,
-    name: "Cozy Throw Pillow",
+    name: "Zebimo",
     href: "#",
-    imageSrc: "/p1.jpg",
+    imageSrc: "/p3.jpg",
     imageAlt: "Soft throw pillow in earthy tones.",
-    price: "$24.99",
-    color: "Beige",
+    price: "Starting from ₹14,995",
   },
   {
     id: 3,
-    name: "Modern Wall Clock",
+    name: "Cameo",
     href: "#",
-    imageSrc: "/p1.jpg",
+    imageSrc: "/p4.jpg",
     imageAlt: "Sleek wall clock with minimalist design.",
-    price: "$39.99",
-    color: "Black",
+    price: "Starting from ₹18,672",
   },
   {
     id: 4,
-    name: "Artistic Wall Print",
+    name: "Grand palais",
     href: "#",
-    imageSrc: "/p1.jpg",
+    imageSrc: "/p5.jpg",
     imageAlt: "Abstract wall print in vibrant colors.",
-    price: "$49.99",
-    color: "Multicolor",
+    price: "Starting from ₹36,413",
   },
   {
     id: 5,
-    name: "Elegant Vase",
+    name: "Double decker",
     href: "#",
-    imageSrc: "/p1.jpg",
+    imageSrc: "/p6.jpg",
     imageAlt: "Elegant white vase with minimalist design.",
-    price: "$29.99",
-    color: "White",
+    price: "Starting from ₹76,529",
   },
   {
     id: 6,
-    name: "Cozy Throw Pillow",
+    name: "Vivah",
     href: "#",
-    imageSrc: "/p1.jpg",
+    imageSrc: "/p7.jpg",
     imageAlt: "Soft throw pillow in earthy tones.",
-    price: "$24.99",
-    color: "Beige",
+    price: "Starting from ₹47,603",
   },
   {
     id: 7,
-    name: "Modern Wall Clock",
+    name: "Crystal",
     href: "#",
-    imageSrc: "/p1.jpg",
+    imageSrc: "/p8.jpg",
     imageAlt: "Sleek wall clock with minimalist design.",
-    price: "$39.99",
-    color: "Black",
+    price: "Starting from ₹47,603",
   },
-  {
-    id: 8,
-    name: "Artistic Wall Print",
-    href: "#",
-    imageSrc: "/p1.jpg",
-    imageAlt: "Abstract wall print in vibrant colors.",
-    price: "$49.99",
-    color: "Multicolor",
-  },
-  {
-    id: 9,
-    name: "Elegant Vase",
-    href: "#",
-    imageSrc: "/p1.jpg",
-    imageAlt: "Elegant white vase with minimalist design.",
-    price: "$29.99",
-    color: "White",
-  },
-  {
-    id: 10,
-    name: "Cozy Throw Pillow",
-    href: "#",
-    imageSrc: "/p1.jpg",
-    imageAlt: "Soft throw pillow in earthy tones.",
-    price: "$24.99",
-    color: "Beige",
-  },
-  {
-    id: 11,
-    name: "Modern Wall Clock",
-    href: "#",
-    imageSrc: "/p1.jpg",
-    imageAlt: "Sleek wall clock with minimalist design.",
-    price: "$39.99",
-    color: "Black",
-  },
-  {
-    id: 12,
-    name: "Artistic Wall Print",
-    href: "#",
-    imageSrc: "/p1.jpg",
-    imageAlt: "Abstract wall print in vibrant colors.",
-    price: "$49.99",
-    color: "Multicolor",
-  },
-  // Add more products as needed
 ];
 
 export default function BestSellers() {
@@ -164,7 +111,7 @@ export default function BestSellers() {
               (product, index) => (
                 <div
                   key={`${product.id}-${index}`}
-                  className={`flex-shrink-0 px-2 ${
+                  className={`flex-shrink-0  px-2 ${
                     itemsPerView > 1 ? `w-1/${itemsPerView}` : "w-full"
                   }`}
                   style={{ width: `${100 / itemsPerView}%` }}
@@ -196,7 +143,7 @@ export default function BestSellers() {
 
 const ProductCard = ({ product }) => (
   <motion.div
-    className="group relative h-full"
+    className="group relative h-full  flex flex-col justify-between"
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
@@ -217,7 +164,7 @@ const ProductCard = ({ product }) => (
             {product.name}
           </a>
         </h3>
-        <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+        {/* <p className="mt-1 text-sm text-gray-500">{product.color}</p> */}
       </div>
       <p className="text-sm font-medium text-[#FFA45B]">{product.price}</p>
     </div>
