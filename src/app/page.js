@@ -11,6 +11,7 @@ import Benefits from "@/components/sections/Benefits";
 import MattressTypes from "@/components/sections/MattressType";
 import Footer from "@/components/Footer";
 import Featured from "@/components/sections/Featured";
+import Premium from "@/components/sections/Premium";
 
 export default function Home() {
   return (
@@ -24,9 +25,7 @@ export default function Home() {
       <FeaturedProducts />
       <BestSellers />
       <MattressTypes />
-      {/* <ProductGrid />
-      <SetPromotion />
-      <WhyProducts />*/}
+      <Premium />
       <Review />
       <Footer />
     </div>
