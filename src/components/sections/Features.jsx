@@ -32,11 +32,11 @@ export default function Features() {
       >
         Our Features
       </motion.h2>
-      <div className="flex flex-wrap justify-center items-center gap-4 px-4">
+      <div className="flex flex-wrap justify-center items-center md:gap-4 gap-2 px-4">
         {features.map((feature, index) => (
           <React.Fragment key={index}>
             <motion.div
-              className="text-center flex flex-col items-center w-32 sm:w-40"
+              className="text-center flex flex-col items-center w-28 sm:w-40"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}

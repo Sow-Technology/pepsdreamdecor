@@ -149,7 +149,7 @@ const ProductCard = ({ product }) => (
     transition={{ duration: 0.5 }}
     whileHover={{ scale: 1.05 }}
   >
-    <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-[#FBF6F0] lg:aspect-none group-hover:opacity-75">
+    <div className="aspect-w-1 aspect-h-1 w-full h-full overflow-hidden rounded-lg bg-[#FBF6F0] lg:aspect-none group-hover:opacity-75">
       <img
         src={product.imageSrc}
         alt={product.imageAlt}

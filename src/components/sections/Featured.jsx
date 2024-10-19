@@ -34,14 +34,14 @@ const ProductSection = ({
   crop = false,
 }) => (
   <motion.div
-    className={`flex flex-col ${
+    className={`flex flex-col p-4 ${
       reverse ? "md:flex-row-reverse" : "md:flex-row"
     } items-center justify-between`}
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
   >
-    <div className="md:w-1/2 space-y-6">
+    <div className="md:w-1/2 w-full space-y-6">
       <h3 className="text-4xl font-bold text-[#FFA45B]">{title}</h3>
       <p className="text-gray-600 max-w-md">{description}</p>
       <motion.button
@@ -52,7 +52,7 @@ const ProductSection = ({
         <span>Shop now</span>
         <ArrowRight className="w-4 h-4" />
       </motion.button>
-      <div className="flex space-x-8">
+      <div className="flex space-x-8 flex-wrap gap-y-4">
         {features.map((feature, index) => (
           <ProductFeature key={index} Icon={feature.icon} text={feature.text} />
         ))}
@@ -72,7 +72,7 @@ const ProductSection = ({
         height={1300}
         className={` w-auto  ${
           ml ? "lg:ml-60" : "lg:-ml-20"
-        }  h-auto rounded-lg ${!crop && "max-w-[70%]"} `}
+        }  h-auto rounded-lg ${!crop && ml && "max-w-[70%]"} `}
       />
     </motion.div>
   </motion.div>
@@ -80,7 +80,7 @@ const ProductSection = ({
 
 export default function Featured() {
   return (
-    <div className="max-w-7xl mx-auto pl-20 py-8 bg-[#ffffff] relative ">
+    <div className="max-w-7xl mx-auto lg:pl-20 py-8 bg-[#ffffff] relative ">
       <motion.div
         className="flex justify-center space-x-8 mb-12"
         initial={{ opacity: 0, y: -20 }}
