@@ -7,7 +7,7 @@ import { ShoppingCart } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bg-[#FBF6F0] pb-16 flex flex-col gap-10 text-center bg-[url('/bg.png')] h-screen bg-cover bg-center relative overflow-hidden">
+    <section className="bg-[#FBF6F0] pb-16 flex flex-col gap-10 text-center bg-[url('/bg2.jpg')] h-screen bg-cover bg-center relative overflow-hidden">
       <Navbar />
       <div className="container mx-auto px-4 flex flex-col items-center  h-full">
         <BoxReveal boxColor={"#FFA45B"}>
@@ -48,6 +48,12 @@ export default function Hero() {
       </div>
       <motion.div
         className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-[#FBF6F0] to-transparent"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.8 }}
+      />
+      <motion.div
+        className="absolute top-0 left-0 w-full h-1/4 bg-gradient-to-t from-transparent to-[#FBF6F0] z-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.8 }}

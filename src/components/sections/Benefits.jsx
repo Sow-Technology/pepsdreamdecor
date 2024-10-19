@@ -7,11 +7,11 @@ export default function Benefits() {
   const benefits = [
     {
       icon: <FaAward className="text-[#FFA45B] text-3xl md:text-4xl" />,
-      text: "Industry Best 12-year Warranty",
+      text: "Industry Best 10-year Warranty",
     },
     {
       icon: <FaRegClock className="text-[#FFA45B] text-3xl md:text-4xl" />,
-      text: "100 Night Risk-Free Trial",
+      text: "Company-owned experience centre",
     },
     {
       icon: <FaTruck className="text-[#FFA45B] text-3xl md:text-4xl" />,
@@ -20,7 +20,7 @@ export default function Benefits() {
   ];
 
   return (
-    <div className="bg-[#FBF6F0] py-12 md:py-20 px-4 md:px-8 relative">
+    <div className="bg-[#FBF6F0] py-6 md:py-10 px-4 md:px-8 relative">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="flex flex-col md:flex-row justify-around items-center space-y-8 md:space-y-0"

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import { ArrowRight, Clock, Leaf, Moon, Shield, Sun, Zap } from "lucide-react";
 
 const FeatureIcon = ({ Icon, text }) => (
@@ -58,7 +58,13 @@ const ProductSection = ({
         ))}
       </div>
     </div>
-    <motion.div className=" mt-8 md:mt-0  " whileHover={{ scale: 1.05 }}>
+    <motion.div
+      className=" mt-8 md:mt-0  "
+      whileHover={{ scale: 1.05 }}
+      initial={{ x: 100, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1, ease: easeInOut, type: "spring" }}
+    >
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -74,7 +80,7 @@ const ProductSection = ({
 
 export default function Featured() {
   return (
-    <div className="max-w-7xl mx-auto pl-20 py-8 bg-[#ffffff] relative">
+    <div className="max-w-7xl mx-auto pl-20 py-8 bg-[#ffffff] relative ">
       <motion.div
         className="flex justify-center space-x-8 mb-12"
         initial={{ opacity: 0, y: -20 }}
@@ -109,7 +115,7 @@ export default function Featured() {
             { icon: Shield, text: "Durable" },
             { icon: Zap, text: "Dust mite resistant" },
           ]}
-          imageSrc="/mattress.png"
+          imageSrc="/mattress2.png"
           imageAlt="Mattress"
           crop={true}
         />
@@ -122,7 +128,7 @@ export default function Featured() {
             { icon: Zap, text: "For allergies" },
             { icon: Leaf, text: "Natural" },
           ]}
-          imageSrc="/pillow.png"
+          imageSrc="/pillow2.png"
           imageAlt="Pillow"
           reverse={true}
           ml={false}

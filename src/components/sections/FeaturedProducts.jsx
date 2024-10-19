@@ -9,7 +9,7 @@ const featuredProducts = [
     name: "Mattress",
     description:
       "Experience ultimate comfort and unparalleled support with our premium Peps Mattresses. Designed to provide the perfect balance of softness and firmness, they ensure you wake up refreshed every morning.",
-    imageSrc: "/p1.jpg",
+    imageSrc: "/fp1.jpg",
     alt: "Premium Peps Mattress",
   },
   {
@@ -17,7 +17,7 @@ const featuredProducts = [
     name: "Pillow",
     description:
       "Rest your head on our luxurious Peps Pillows for a peaceful slumber. Designed for optimal neck and head support, our pillows offer the comfort you need for a rejuvenating sleep.",
-    imageSrc: "/p1.jpg",
+    imageSrc: "/fp2.jpg",
     alt: "Luxurious Peps Pillow",
   },
   {
@@ -25,7 +25,7 @@ const featuredProducts = [
     name: "Accessories",
     description:
       "Transform your bedroom into a sanctuary with our exquisite Peps Accessories. From cozy comforters to stylish cushions, our accessories add elegance and comfort to your sleep space.",
-    imageSrc: "/p1.jpg",
+    imageSrc: "/fp3.jpg",
     alt: "Exquisite Peps Accessories",
   },
 ];
@@ -57,8 +57,9 @@ const ProductCard = ({ product, index }) => {
     <motion.div
       className="bg-white rounded-lg overflow-hidden shadow-lg"
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
+      viewport={{ once: true }}
     >
       <div className="relative h-64">
         <Image

@@ -55,7 +55,7 @@ export default function MattressTypes() {
               key={index}
               className="text-center bg-white rounded-lg shadow-md overflow-hidden"
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
             >

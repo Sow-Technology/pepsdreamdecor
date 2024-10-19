@@ -18,7 +18,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Benefits />
-      <div className="bg-white">
+      <div className="bg-white overflow-hidden">
         <Featured />
       </div>
       <FeaturedProducts />

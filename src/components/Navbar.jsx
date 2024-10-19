@@ -21,7 +21,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="px-4 sm:px-6 lg:px-8 py-4  ">
+    <nav className="px-4 sm:px-6 lg:px-8 py-4 relative z-10 ">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
