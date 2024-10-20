@@ -97,10 +97,7 @@ const Footer = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <p>
-            &copy; {new Date().getFullYear()} PeacefulPillow. All rights
-            reserved.
-          </p>
+          <p>&copy; {new Date().getFullYear()} Peps XP. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

@@ -59,7 +59,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="px-4 sm:px-6 lg:px-8 py-4 relative z-10">
+    <nav className="px-4 sm:px-6 lg:px-8 py-4 relative z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <motion.div
           initial={{ opacity: 0, x: -50 }}

@@ -41,7 +41,7 @@ const ProductSection = ({
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
   >
-    <div className="md:w-1/2 w-full space-y-6">
+    <div className="md:w-1/2 md:min-w-[490px] w-full space-y-6">
       <h3 className="text-4xl font-bold text-[#FFA45B]">{title}</h3>
       <p className="text-gray-600 max-w-md">{description}</p>
       <motion.button
@@ -72,7 +72,7 @@ const ProductSection = ({
         height={1300}
         className={` w-auto  ${
           ml ? "lg:ml-60" : "lg:-ml-20"
-        }  h-auto rounded-lg ${!crop && ml && "max-w-[70%]"} `}
+        }  h-auto rounded-lg ${!crop && "max-w-[70%]"} `}
       />
     </motion.div>
   </motion.div>

@@ -27,8 +27,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Experience the best of Peps Mattresses at PeacefulPillow. Discover
-            the ultimate in sleep comfort and support.{" "}
+            Experience the best of Peps Mattresses at Peps XP. Discover the
+            ultimate in sleep comfort and support.{" "}
           </motion.p>
         </BoxReveal>
         <BoxReveal boxColor={"#FFA45B"}>
