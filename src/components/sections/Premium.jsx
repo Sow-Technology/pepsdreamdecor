@@ -86,23 +86,8 @@ export default function Premium() {
               ))}
             </div>
           </div>
-          <div className="lg:w-1/2 mt-8 lg:mt-0">
-            <div className="sticky top-24">
-              <motion.div
-                className="rounded-lg overflow-hidden shadow-xl"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Image
-                  src="/1.webp"
-                  alt="Premium Mattress"
-                  width={600}
-                  height={800}
-                  layout="responsive"
-                  className="object-cover"
-                />
-              </motion.div>
+          <div className="lg:w-1/2 mt-8 lg:mt-0 flex items-start">
+            <div className="sticky top-52 w-full">
               <motion.div
                 className="mt-4 text-center"
                 initial={{ opacity: 0 }}
@@ -115,6 +100,20 @@ export default function Premium() {
                 <p className="text-gray-700 mt-2">
                   Discover the perfect blend of technology and comfort
                 </p>
+              </motion.div>
+              <motion.div
+                className="rounded-lg overflow-hidden shadow-xl"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Image
+                  src="/1.webp"
+                  alt="Premium Mattress"
+                  width={600}
+                  height={800}
+                  className="object-cover"
+                />
               </motion.div>
             </div>
           </div>

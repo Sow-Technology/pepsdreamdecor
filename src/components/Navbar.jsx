@@ -4,6 +4,7 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { Menu, X, ShoppingCart, ChevronDown, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaPlayCircle } from "react-icons/fa";
 
 const menuItems = [
   { name: "Home", link: "/" },
@@ -46,7 +47,7 @@ export default function Navbar() {
   const handleDropdownLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 300); // 300ms delay before closing
+    }, 200); // 300ms delay before closing
   };
 
   useEffect(() => {
@@ -128,19 +129,21 @@ export default function Navbar() {
         </div>
 
         {/* Shop Now Button */}
-        <motion.div
-          className="hidden md:block"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-[#FFA45B] focus:ring-offset-2 focus:ring-offset-[#FBF6F0]">
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFA45B_0%,#FFDA77_50%,#FFA45B_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#FBF6F0] px-3 py-1 text-sm font-medium text-[#FFA45B] backdrop-blur-3xl">
-              <ShoppingCart className="h-4 w-4 mr-2" /> Shop Now
-            </span>
-          </button>
-        </motion.div>
+        <Link href={`/contact`}>
+          <motion.div
+            className="hidden md:block"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-[#FFA45B] focus:ring-offset-2 focus:ring-offset-[#FBF6F0]">
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFA45B_0%,#FFDA77_50%,#FFA45B_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#FBF6F0] px-3 py-1 text-sm font-medium text-[#FFA45B] backdrop-blur-3xl">
+                <FaPlayCircle className="h-4 w-4 mr-2" /> Experience Now
+              </span>
+            </button>
+          </motion.div>{" "}
+        </Link>
 
         {/* Mobile Menu Button */}
         <motion.div
@@ -231,15 +234,15 @@ export default function Navbar() {
               ))}
             </div>
             <motion.div
-              className="px-5 py-3"
+              className="px-5 py-3 md:hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.4 }}
             >
-              <button className="relative w-full inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-[#FFA45B] focus:ring-offset-2 focus:ring-offset-[#FBF6F0]">
+              <button className="relative w-full inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-[#FFA45B] focus:ring-offset-2 focus:ring-offset-[#FBF6F0] ">
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFA45B_0%,#FFDA77_50%,#FFA45B_100%)]" />
                 <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#FBF6F0] px-3 py-1 text-sm font-medium text-[#FFA45B] backdrop-blur-3xl">
-                  <ShoppingCart className="h-4 w-4 mr-2" /> Shop Now
+                  <FaPlayCircle className="h-4 w-4 mr-2" /> Experience Now
                 </span>
               </button>
             </motion.div>

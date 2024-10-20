@@ -4,6 +4,8 @@ import Navbar from "../Navbar";
 import { motion } from "framer-motion";
 import { BoxReveal } from "../ui/box-reveal";
 import { ShoppingCart } from "lucide-react";
+import { FaPlayCircle } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -32,18 +34,20 @@ export default function Hero() {
           </motion.p>
         </BoxReveal>
         <BoxReveal boxColor={"#FFA45B"}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <button className="relative inline-flex h-14 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-[#FFA45B] focus:ring-offset-2 focus:ring-offset-[#FBF6F0]">
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFA45B_0%,#FFDA77_50%,#FFA45B_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#FBF6F0] px-6 py-1 text-lg font-medium text-[#FFA45B] backdrop-blur-3xl">
-                <ShoppingCart className="h-4 w-4 mr-2" /> Shop Now{" "}
-              </span>
-            </button>
-          </motion.div>
+          <Link href="/contact">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <button className="relative inline-flex h-14 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-[#FFA45B] focus:ring-offset-2 focus:ring-offset-[#FBF6F0]">
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFA45B_0%,#FFDA77_50%,#FFA45B_100%)]" />
+                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#FBF6F0] px-6 py-1 text-lg font-medium text-[#FFA45B] backdrop-blur-3xl">
+                  <FaPlayCircle className="h-4 w-4 mr-2" /> Experience Now{" "}
+                </span>
+              </button>
+            </motion.div>
+          </Link>
         </BoxReveal>
       </div>
       <motion.div

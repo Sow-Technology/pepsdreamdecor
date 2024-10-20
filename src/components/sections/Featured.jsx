@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { easeInOut, motion } from "framer-motion";
 import { ArrowRight, Clock, Leaf, Moon, Shield, Sun, Zap } from "lucide-react";
+import Link from "next/link";
 
 const FeatureIcon = ({ Icon, text }) => (
   <motion.div
@@ -44,14 +45,16 @@ const ProductSection = ({
     <div className="md:w-1/2 md:min-w-[490px] w-full space-y-6">
       <h3 className="text-4xl font-bold text-[#FFA45B]">{title}</h3>
       <p className="text-gray-600 max-w-md">{description}</p>
-      <motion.button
-        className="flex items-center space-x-2 bg-[#FFA45B] text-white rounded-full px-6 py-2 hover:bg-[#FFDA77] hover:text-[#FFA45B] transition-colors"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <span>Shop now</span>
-        <ArrowRight className="w-4 h-4" />
-      </motion.button>
+      <Link href="/contact">
+        <motion.button
+          className="flex items-center space-x-2 my-3 bg-[#FFA45B] text-white rounded-full px-6 py-2 hover:bg-[#FFDA77] hover:text-[#FFA45B] transition-colors"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span>Experience now</span>
+          <ArrowRight className="w-4 h-4" />
+        </motion.button>
+      </Link>
       <div className="flex space-x-8 flex-wrap gap-y-4">
         {features.map((feature, index) => (
           <ProductFeature key={index} Icon={feature.icon} text={feature.text} />

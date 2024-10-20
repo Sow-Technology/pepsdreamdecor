@@ -20,7 +20,7 @@ const AboutUs = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          About PeacefulPillow Experience Centre
+          About Peps XP Experience Centre
         </motion.h1>
 
         <motion.div
@@ -32,7 +32,7 @@ const AboutUs = () => {
           <div className="md:w-1/2 mb-8 md:mb-0">
             <Image
               src="/store.jpg" // Replace with your actual image
-              alt="PeacefulPillow Store Front"
+              alt="Peps XP Store Front"
               width={600}
               height={400}
               className="rounded-lg shadow-lg w-[500px]"
@@ -40,17 +40,17 @@ const AboutUs = () => {
           </div>
           <div className="md:w-1/2 md:pl-8">
             <p className="text-lg text-gray-700 mb-4">
-              Welcome to PeacefulPillow, your ultimate destination for
-              experiencing the best in comfort and relaxation. As an exclusive
-              seller of Peps Mattresses and Peps Accessories, we pride ourselves
-              on being an authorized partner of Peps, ensuring you get the
-              highest quality sleep solutions.
+              Welcome to Peps XP, your ultimate destination for experiencing the
+              best in comfort and relaxation. As an exclusive seller of Peps
+              Mattresses and Peps Accessories, we pride ourselves on being an
+              authorized partner of Peps, ensuring you get the highest quality
+              sleep solutions.
             </p>
             <p className="text-lg text-gray-700">
-              At PeacefulPillow, we believe in the power of a perfect
-              night&#39;s sleep. That&#39;s why we&#39;ve created a
-              one-of-a-kind experience centre where you can try and feel the
-              comfort of Peps mattresses before making your purchase.
+              At Peps XP, we believe in the power of a perfect night&#39;s
+              sleep. That&#39;s why we&#39;ve created a one-of-a-kind experience
+              centre where you can try and feel the comfort of Peps mattresses
+              before making your purchase.
             </p>
           </div>
         </motion.div>
@@ -74,7 +74,7 @@ const AboutUs = () => {
               /> */}
               <Image
                 src="/store2.jpg" // Replace with your actual image
-                alt="PeacefulPillow Store Front"
+                alt="Peps XP Store Front"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-lg w-[400px] ml-auto"
@@ -104,7 +104,7 @@ const AboutUs = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <h2 className="text-3xl font-bold text-[#FFA45B] mb-6">
-            Why Choose PeacefulPillow?
+            Why Choose Peps XP?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -144,9 +144,9 @@ const AboutUs = () => {
             /> */}
           </div>
           <p className="text-lg text-gray-700 mb-8">
-            Join us at PeacefulPillow Experience Centre and discover the
-            difference a quality mattress can make. Your journey to a better
-            night&#39;s sleep starts here.
+            Join us at Peps XP Experience Centre and discover the difference a
+            quality mattress can make. Your journey to a better night&#39;s
+            sleep starts here.
           </p>
           <motion.button
             className="bg-[#FFA45B] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#FFDA77] hover:text-[#FFA45B] transition-colors"

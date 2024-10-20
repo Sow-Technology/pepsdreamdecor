@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const featuredProducts = [
   {
@@ -74,13 +76,15 @@ const ProductCard = ({ product, index }) => {
           {product.name}
         </h3>
         <p className="text-gray-600 mb-4">{product.description}</p>
-        <motion.button
-          className="bg-[#FFA45B] text-white px-6 py-2 rounded-full hover:bg-[#FFDA77] hover:text-[#FFA45B] transition-colors duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Shop Now
-        </motion.button>
+        <Link href="/contact">
+          <motion.button
+            className="bg-[#FFA45B] text-white px-6 py-2 rounded-full hover:bg-[#FFDA77] hover:text-[#FFA45B] transition-colors duration-300 flex gap-2 items-center"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Experience Now <ArrowRight className="w-4 h-4" />
+          </motion.button>
+        </Link>
       </div>
     </motion.div>
   );
