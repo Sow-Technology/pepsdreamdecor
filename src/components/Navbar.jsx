@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Logo from "./Logo";
 import Link from "next/link";
-import { Menu, X, ShoppingCart, ChevronDown } from "lucide-react";
+import { Menu, X, ShoppingCart, ChevronDown, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const menuItems = [
@@ -29,8 +29,12 @@ const MotionLink = motion(Link);
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileActiveDropdown, setMobileActiveDropdown] = useState(null);
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
+  const toggleMobileDropdown = (idx) => {
+    setMobileActiveDropdown(mobileActiveDropdown === idx ? null : idx);
+  };
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -186,32 +190,43 @@ export default function Navbar() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {menuItems.map((item, idx) => (
                 <div key={idx}>
-                  <MotionLink
-                    href={item.link}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-[#FFDA77] hover:text-[#FFA45B] transition-colors"
-                    onClick={() => !item.submenu && toggleMenu()}
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 * idx }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                  <div
+                    className="flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-[#FFDA77] hover:text-[#FFA45B] transition-colors"
+                    onClick={() =>
+                      item.submenu ? toggleMobileDropdown(idx) : toggleMenu()
+                    }
                   >
-                    {item.name}
-                  </MotionLink>
-                  {item.submenu && (
-                    <div className="pl-6">
-                      {item.submenu.map((subItem, subIdx) => (
-                        <Link
-                          key={subIdx}
-                          href={subItem.link}
-                          className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-[#FFDA77] hover:text-[#FFA45B]"
-                          onClick={toggleMenu}
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                    <Link href={item.link}>{item.name}</Link>
+                    {item.submenu && (
+                      <ChevronRight
+                        className={`h-4 w-4 transition-transform ${
+                          mobileActiveDropdown === idx ? "rotate-90" : ""
+                        }`}
+                      />
+                    )}
+                  </div>
+                  <AnimatePresence>
+                    {item.submenu && mobileActiveDropdown === idx && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="pl-6"
+                      >
+                        {item.submenu.map((subItem, subIdx) => (
+                          <Link
+                            key={subIdx}
+                            href={subItem.link}
+                            className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-[#FFDA77] hover:text-[#FFA45B]"
+                            onClick={toggleMenu}
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               ))}
             </div>
