@@ -53,7 +53,7 @@ export default function MattressTypes() {
           {mattressTypes.map((item, index) => (
             <motion.div
               key={index}
-              className="text-center bg-white rounded-lg shadow-md overflow-hidden w-[30%]"
+              className="text-center bg-white rounded-lg shadow-md overflow-hidden w-full lg:w-[30%]"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
