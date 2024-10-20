@@ -7,7 +7,7 @@ import { ShoppingCart } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bg-[#FBF6F0] pb-16 flex flex-col gap-10 text-center bg-[url('/bg2.jpg')] h-screen bg-cover bg-center relative overflow-hidden">
+    <section className="bg-[#FBF6F0] pb-16 flex flex-col gap-10 text-center bg-[url('/bg2.svg')] h-screen bg-cover bg-center relative overflow-hidden">
       <Navbar />
       <div className="container mx-auto px-4 flex flex-col items-center  h-full z-10">
         <BoxReveal boxColor={"#FFA45B"}>
