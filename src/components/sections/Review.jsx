@@ -145,13 +145,6 @@ const reviews = [
 
   {
     rating: 5,
-    name: "Sudeep M",
-    comment: "Awesome! ??",
-    time: "02/04/2024",
-  },
-
-  {
-    rating: 5,
     name: "Vanan J",
     comment:
       "It is truly an experience centre. The way we were guided to select our mattress by understanding all the requirements even the smallest of one was incredible. Thanks to Mr Umesh and Ms Ashwini to have accorded the best of experience. They are definitely not behind to sell high cost mattress and no unnecessary spams or follow ups. 5 star experience.",

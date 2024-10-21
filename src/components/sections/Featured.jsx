@@ -39,7 +39,8 @@ const ProductSection = ({
       reverse ? "md:flex-row-reverse" : "md:flex-row"
     } items-center justify-between`}
     initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
     transition={{ duration: 0.5 }}
   >
     <div className="md:w-1/2 md:min-w-[490px] w-full space-y-6">

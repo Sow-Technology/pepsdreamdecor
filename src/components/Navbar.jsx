@@ -10,7 +10,7 @@ const menuItems = [
   { name: "Home", link: "/" },
   {
     name: "Mattress",
-    link: "/mattress",
+    link: "/products/mattress",
     submenu: [
       { name: "Spring Mattress", link: "/mattress/spring" },
       { name: "Foam Mattress", link: "/mattress/foam" },
@@ -19,8 +19,8 @@ const menuItems = [
       { name: "Latex Mattress", link: "/mattress/latex" },
     ],
   },
-  { name: "Pillow", link: "/pillow" },
-  { name: "Accessories", link: "/accessories" },
+  { name: "Pillow", link: "/products/pillow" },
+  { name: "Accessories", link: "/products/accessories" },
   { name: "About us", link: "/about" },
   { name: "Contact", link: "/contact" },
 ];

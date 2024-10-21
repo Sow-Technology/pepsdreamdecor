@@ -34,10 +34,10 @@ const ShippingPolicy = () => {
           <div className="prose prose-lg">
             <PolicySection title="Fast and Reliable Shipping">
               <p>
-                At PeacefulPillow, we aim to deliver our products to you as
-                quickly as possible. All shipments will be delivered within 7 to
-                14 working days based on your location, unless stated otherwise
-                on our website or communicated through other means.
+                At Peps XP, we aim to deliver our products to you as quickly as
+                possible. All shipments will be delivered within 7 to 14 working
+                days based on your location, unless stated otherwise on our
+                website or communicated through other means.
               </p>
               <p>
                 For any clarifications regarding your orders, please contact us
@@ -61,10 +61,10 @@ const ShippingPolicy = () => {
 
             <PolicySection title="Product Availability">
               <p>
-                PeacefulPillow offers a range of sleep products, including
-                bedsheets, comforters, stools, cushions, mattresses, pillows,
-                and other accessories. Our website serves as an online platform
-                that allows you to purchase these products at the listed prices.
+                Peps XP offers a range of sleep products, including bedsheets,
+                comforters, stools, cushions, mattresses, pillows, and other
+                accessories. Our website serves as an online platform that
+                allows you to purchase these products at the listed prices.
               </p>
               <p>
                 This Agreement does not create any partnership or joint venture
@@ -102,8 +102,8 @@ const ShippingPolicy = () => {
 
             <PolicySection title="Liability">
               <p>
-                To the maximum extent permissible by law, PeacefulPillow shall
-                not be liable for any direct, indirect, incidental, punitive,
+                To the maximum extent permissible by law, Peps XP shall not be
+                liable for any direct, indirect, incidental, punitive,
                 exemplary, special, consequential damages, or loss of profits,
                 revenue, or goods incurred due to any delay in the delivery of
                 orders.
