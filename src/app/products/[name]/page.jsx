@@ -36,38 +36,70 @@ const allProducts = {
   mattress: [
     {
       id: 1,
-      name: "Comfort Plus Mattress",
+      name: "Spring Koil Spring Mattress",
       category: "Spring",
-      price: 599,
-      rating: 4.5,
-      image: "/.jpg",
-      fabric: "Cotton",
-      size: "Queen",
-      color: "White",
+      price: 7447,
+      rating: 5,
+      image: "/products/m1.jpg",
+      thickness: [5, 6, 8, 10],
+      size: ["Single", "Twin", "Queen", "King"],
+      color: ["Maroon", "Cream", "Dark Blue", "Brown"],
     },
     {
       id: 2,
-      name: "Memory Foam Delight",
-      category: "Foam",
-      price: 499,
-      rating: 4.2,
-      image: "/mattress2.jpg",
-      fabric: "Polyester",
-      size: "King",
-      color: "Gray",
+      name: "Tartania Spring Mattress",
+      category: "Spring",
+      price: 10823,
+      rating: 5,
+      image: "/products/m2.jpg",
+      thickness: [6, 8],
+      size: ["Single", "Twin", "Queen", "King"],
+      color: ["Maroon", "Dark Blue"],
     },
     {
       id: 3,
-      name: "Hybrid Dream",
-      category: "Hybrid",
-      price: 799,
-      rating: 4.8,
-      image: "/mattress3.jpg",
-      fabric: "Bamboo",
-      size: "Full",
-      color: "Beige",
+      name: "Zenimo Spring Mattress",
+      category: "Spring",
+      price: 14663,
+      rating: 5,
+      image: "/products/m3.jpg",
+      thickness: [6, 8],
+      size: ["Single", "Twin", "Queen", "King"],
+      color: ["Dark Blue"],
     },
-    // ... more mattresses
+    {
+      id: 4,
+      name: "Cameo Spring Mattress",
+      category: "Spring",
+      price: 21004,
+      rating: 5,
+      image: "/products/m4.jpg",
+      thickness: [6, 8],
+      size: ["Single", "Twin", "Queen", "King"],
+      color: ["Dark Blue"],
+    },
+    {
+      id: 5,
+      name: "Vivah Spring Mattress",
+      category: "Spring",
+      price: 21004,
+      rating: 5,
+      image: "/products/m5.jpg",
+      thickness: [6, 8],
+      size: ["Single", "Twin", "Queen", "King"],
+      color: ["Cream"],
+    },
+    {
+      id: 6,
+      name: "Grand Palais Spring Mattress",
+      category: "Spring",
+      price: 21004,
+      rating: 5,
+      image: "/products/m6.jpg",
+      thickness: [8, 10],
+      size: ["Single", "Twin", "Queen", "King"],
+      color: ["Cream"],
+    },
   ],
   pillow: [
     {
@@ -291,14 +323,12 @@ const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({
     categories: [],
-    fabrics: [],
     sizes: [],
     colors: [],
     minPrice: 0,
     maxPrice: 200000,
   });
   const [sortBy, setSortBy] = useState("name");
-  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
   useEffect(() => {
     const initialProducts = allProducts[productType] || [];
@@ -307,18 +337,43 @@ const ProductsPage = () => {
 
   useEffect(() => {
     let filteredProducts = (allProducts[productType] || []).filter(
-      (product) =>
-        (filters.categories.length === 0 ||
-          filters.categories.includes(product.category)) &&
-        (filters.fabrics.length === 0 ||
-          filters.fabrics.includes(product.fabric)) &&
-        (filters.sizes.length === 0 || filters.sizes.includes(product.size)) &&
-        (filters.colors.length === 0 ||
-          filters.colors.includes(product.color)) &&
-        product.price >= filters.minPrice &&
-        product.price <= filters.maxPrice
+      (product) => {
+        // Check categories
+        const categoryMatch =
+          filters.categories.length === 0 ||
+          filters.categories.includes(product.category);
+
+        // Check fabrics
+        // const fabricMatch =
+        //   filters.fabrics.length === 0 ||
+        //   (Array.isArray(product.fabric)
+        //     ? product.fabric.some((fabric) => filters.fabrics.includes(fabric))
+        //     : filters.fabrics.includes(product.fabric));
+
+        // Check sizes
+        const sizeMatch =
+          filters.sizes.length === 0 ||
+          (Array.isArray(product.size)
+            ? product.size.some((size) => filters.sizes.includes(size))
+            : filters.sizes.includes(product.size));
+
+        // Check colors
+        const colorMatch =
+          filters.colors.length === 0 ||
+          (Array.isArray(product.color)
+            ? product.color.some((color) => filters.colors.includes(color))
+            : filters.colors.includes(product.color));
+
+        // Check price range
+        const priceMatch =
+          product.price >= filters.minPrice &&
+          product.price <= filters.maxPrice;
+
+        return categoryMatch && sizeMatch && colorMatch && priceMatch;
+      }
     );
 
+    // Sort products
     filteredProducts.sort((a, b) => {
       if (sortBy === "name") return a.name.localeCompare(b.name);
       if (sortBy === "price") return a.price - b.price;
@@ -330,11 +385,15 @@ const ProductsPage = () => {
   }, [filters, sortBy, productType]);
 
   const getUniqueValues = (key) => [
-    ...new Set((allProducts[productType] || []).map((p) => p[key])),
+    ...new Set(
+      (allProducts[productType] || []).flatMap((p) =>
+        Array.isArray(p[key]) ? p[key] : [p[key]]
+      )
+    ),
   ];
 
   const categories = getUniqueValues("category");
-  const fabrics = getUniqueValues("fabric");
+  // const fabrics = getUniqueValues("fabric");
   const sizes = getUniqueValues("size");
   const colors = getUniqueValues("color");
 
@@ -346,6 +405,7 @@ const ProductsPage = () => {
         : [...prevFilters[filterType], value],
     }));
   };
+
   const FilterSection = ({ title, items, filterType }) => (
     <div className="mb-6">
       <h3 className="font-semibold mb-2">{title}</h3>
@@ -369,7 +429,7 @@ const ProductsPage = () => {
         items={categories}
         filterType="categories"
       />
-      <FilterSection title="Fabric" items={fabrics} filterType="fabrics" />
+      {/* <FilterSection title="Fabric" items={fabrics} filterType="fabrics" /> */}
       <FilterSection title="Size" items={sizes} filterType="sizes" />
       <FilterSection title="Color" items={colors} filterType="colors" />
       <div className="mb-6">
