@@ -12,6 +12,7 @@ import MattressTypes from "@/components/sections/MattressType";
 import Footer from "@/components/Footer";
 import Featured from "@/components/sections/Featured";
 import Premium from "@/components/sections/Premium";
+import Advetisement from "@/components/sections/Advertisement";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Benefits />
+      <Advetisement />
       <div className="bg-white overflow-hidden">
         <Featured />
       </div>

@@ -26,7 +26,7 @@ const mattressTypes = [
     subtitle: "Breathable Mattress",
   },
   {
-    image: "/m5.jpeg",
+    image: "/type5.jpg",
     title: "Bonnell Spring",
     subtitle: "Back Support Spring Mattress",
   },

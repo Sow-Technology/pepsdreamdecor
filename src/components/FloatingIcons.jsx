@@ -2,7 +2,7 @@ import { FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 
 const FloatingIcons = () => {
   return (
-    <div className="fixed -left-1 top-1/2 transform -translate-y-1/2 z-50 flex flex-col space-y-2 p-2   py-5 bg-white/40 border-2 shadow-md rounded-xl backdrop-blur-md">
+    <div className="fixed -left-1 top-1/2 transform -translate-y-1/2 z-50 flex flex-col space-y-2 p-2   py-5 bg-white/40 border-2 shadow-md rounded-r-xl backdrop-blur-md">
       <a
         href="https://wa.me/+917899114456"
         target="_blank"

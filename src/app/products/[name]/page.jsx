@@ -71,7 +71,7 @@ const allProducts = {
       id: 4,
       name: "Cameo Spring Mattress",
       category: "Spring",
-      price: 21004,
+      price: 18672,
       rating: 5,
       image: "/products/m4.jpg",
       thickness: [6, 8],

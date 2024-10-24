@@ -2,9 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Lottie from "react-lottie-player";
-// import sleepAnimation from "../public/sleep-animation.json";
-// import comfortAnimation from "../public/comfort-animation.json";
 import { CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -20,7 +17,7 @@ const AboutUs = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          About Peps XP Experience Centre
+          About Peps XP XPerienc
         </motion.h1>
 
         <motion.div
@@ -62,7 +59,7 @@ const AboutUs = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <h2 className="text-3xl font-bold text-[#FFA45B] mb-6">
-            Our Experience Centre
+            Our XPerienc
           </h2>
           <div className="flex flex-col md:flex-row-reverse items-center ">
             <div className="md:w-1/2 mb-8 md:mb-0 ">
@@ -144,9 +141,9 @@ const AboutUs = () => {
             /> */}
           </div>
           <p className="text-lg text-gray-700 mb-8">
-            Join us at Peps XP Experience Centre and discover the difference a
-            quality mattress can make. Your journey to a better night&#39;s
-            sleep starts here.
+            Join us at Peps XP XPerienc and discover the difference a quality
+            mattress can make. Your journey to a better night&#39;s sleep starts
+            here.
           </p>
           <motion.button
             className="bg-[#FFA45B] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#FFDA77] hover:text-[#FFA45B] transition-colors"
