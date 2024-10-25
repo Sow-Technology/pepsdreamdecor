@@ -23,6 +23,7 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import { usePathname } from "next/navigation";
 
 import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 const formSchema = z.object({
   fullName: z
@@ -40,10 +41,11 @@ const formSchema = z.object({
       message: "Invalid phone number",
     })
     .refine(isValidPhoneNumber, { message: "Invalid phone number" }),
+  orderType: z.string(),
   message: z.string().optional(),
 });
 
-const Audit = ({ footer }) => {
+const Audit = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -51,6 +53,7 @@ const Audit = ({ footer }) => {
       fullName: "",
       workEmail: "",
       phoneNumber: "",
+      orderType: "Bulk Order",
       message: "",
     },
   });
@@ -59,18 +62,7 @@ const Audit = ({ footer }) => {
     try {
       setIsSubmitting(true);
 
-      const response = await axios.post("/api/verify-turnstile", { token });
-      if (response.data.success) {
-        const response = await axios.post("/api/submit-form", {
-          fullName: values.fullName,
-          workEmail: values.workEmail,
-          phoneNumber: values.phoneNumber,
-          message: values.message,
-        });
-        toast.success("We'll reach out to you soon!");
-      } else {
-        toast.error("Invalid Captcha! Please try again later");
-      }
+      console.log(values);
     } catch (err) {
       toast.error("Internal server error, Try again later!");
     } finally {
@@ -126,7 +118,38 @@ const Audit = ({ footer }) => {
               </FormItem>
             )}
           />
-
+          <FormField
+            control={form.control}
+            name="orderType"
+            render={({ field }) => (
+              <FormItem className="space-y-3">
+                <FormLabel>Order Type</FormLabel>
+                <FormControl>
+                  <RadioGroup
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                    className="flex gap-5 space-y-1"
+                  >
+                    <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormControl>
+                        <RadioGroupItem value="Bulk Order" />
+                      </FormControl>
+                      <FormLabel className="font-normal">Bulk Order</FormLabel>
+                    </FormItem>
+                    <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormControl>
+                        <RadioGroupItem value="Single Order" />
+                      </FormControl>
+                      <FormLabel className="font-normal">
+                        Single Order
+                      </FormLabel>
+                    </FormItem>
+                  </RadioGroup>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="message"

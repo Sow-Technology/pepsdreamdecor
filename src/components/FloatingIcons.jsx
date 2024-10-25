@@ -1,4 +1,6 @@
+import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import { FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
 
 const FloatingIcons = () => {
   return (
@@ -20,6 +22,15 @@ const FloatingIcons = () => {
         aria-label="Location"
       >
         <FaMapMarkerAlt size={16} />
+      </a>
+      <a
+        href="https://www.instagram.com/peps.omr"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-pink-500 text-white p-2 rounded-full shadow-lg hover:bg-pink-600 transition-all"
+        aria-label="Location"
+      >
+        <FaInstagram size={18} />
       </a>
     </div>
   );
