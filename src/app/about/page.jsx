@@ -17,7 +17,7 @@ const AboutUs = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          About Peps XP XPerienc
+          About Peps XPerienc
         </motion.h1>
 
         <motion.div

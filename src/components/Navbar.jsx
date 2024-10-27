@@ -47,7 +47,7 @@ export default function Navbar() {
   const handleDropdownLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 200); // 300ms delay before closing
+    }, 200);
   };
 
   useEffect(() => {

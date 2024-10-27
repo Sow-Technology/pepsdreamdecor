@@ -22,7 +22,7 @@ export default function Advetisement() {
 
   return (
     <div className="bg-[#FBF6F0] py-16">
-      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto  px-4 sm:px-6 w-screen lg:px-8">
         <div className="relative overflow-hidden" ref={containerRef}>
           <motion.div
             className="flex"

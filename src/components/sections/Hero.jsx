@@ -46,7 +46,7 @@ export default function Hero() {
       </AnimatePresence>
 
       {/* Price Display */}
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         <motion.div
           key={currentImageIndex}
           initial={{ opacity: 0, x: 100 }}
@@ -71,7 +71,7 @@ export default function Hero() {
             </div>
           </motion.div>
         </motion.div>
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       {/* Slider Indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
